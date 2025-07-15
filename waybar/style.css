@@ -1,0 +1,115 @@
+* {
+  font-family: Lexend, "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  font-weight: 500;
+  color: #e2daf5; /* 浅紫色前景 */
+}
+
+#waybar {
+  background-color: rgba(15, 6, 31, 0.8); /* 深紫背景带透明度 */
+  padding: 0 5px;
+}
+
+/* 左侧模块 */
+#custom-fuzzel {
+  margin: 0 15px;
+  font-size: 24px;
+  color: #1793D1;
+}
+
+#window {
+  margin: 5px 0;
+  padding: 0 12px;
+  border-radius: 8px;
+  background-color: rgba(42, 26, 64, 0.7); /* 半透明暗紫 */
+  color: #f0eafc; /* 淡紫白 */
+  font-weight: 500;
+}
+
+/* 工作区模块 */
+#workspaces {
+  margin: 5px 8px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+#workspaces button {
+  border-radius: 8px;
+  padding: 0 8px;
+  margin: 0 2px;
+  background-color: rgba(42, 26, 64, 0.6); /* 非活动工作区 */
+  color: #a97cff; /* 薰衣草紫 */
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  background-color: #a97cff; /* 活动工作区 */
+  color: #0f061f; /* 深紫黑 */
+  font-weight: 500;
+}
+
+#workspaces button.urgent {
+  background-color: #ff6b9c; /* 紫红色 */
+  color: #0f061f;
+}
+
+#workspaces button:hover {
+  background-color: #d18aff; /* 亮紫色 */
+  color: #0f061f;
+}
+
+/* 右侧系统模块 */
+#cpu,
+#memory,
+#pulseaudio,
+#tray,
+#battery,
+#clock,
+#custom-power {
+  margin: 5px 0;
+  padding: 0 12px;
+  border-radius: 8px;
+  background-color: rgba(42, 26, 64, 0.7); /* 半透明暗紫 */
+  color: #d0c5e8; /* 灰紫色文本 */
+}
+
+/* 模块特定颜色 */
+#pulseaudio {
+  color: #8a7fff; /* 蓝紫色 */
+}
+
+#cpu {
+  color: #7bc1ff; /* 紫调蓝 */
+}
+
+#memory {
+  color: #d4a8ff; /* 浅紫 */
+}
+
+#battery {
+  color: #c6a6ff; /* 柔薰衣草紫 */
+}
+
+#battery.charging {
+  color: #a97cff; /* 薰衣草紫 */
+}
+
+#battery.warning:not(.charging) {
+  color: #ff8cb4; /* 粉紫色 */
+}
+
+#clock {
+  color: #f0eafc; /* 淡紫白 */
+  font-weight: 500;
+  background-color: rgba(106, 76, 166, 0.6); /* 中等紫色 */
+}
+
+#custom-power {
+  color: #ff8cb4; /* 粉紫色 */
+  margin-right: 8px;
+}
+
+/* 托盘样式 */
+#tray > * {
+  padding: 0 6px;
+}

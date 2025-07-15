@@ -1,0 +1,14 @@
+*
+!*/
+
+!.gitignore
+!README.md
+!README_zh-CN.md
+
+!hypr/**
+!kitty/**
+!waybar/**
+!gtk-3.0/**
+!fuzzel/**
+!mako/**
+!fastfetch/**

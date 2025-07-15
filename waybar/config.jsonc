@@ -1,0 +1,118 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 30,
+  "spacing": 5,
+  "exclusive": true,
+  "fixed-center": true,
+
+  "modules-left": [
+    "custom/fuzzel",
+    "tray",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "cpu",
+    "hyprland/workspaces",
+    "memory"
+  ],
+  "modules-right": [
+    "clock",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+
+  "custom/fuzzel": {
+    "format": "󰣇",
+    "on-click": "fuzzel"
+  },
+
+  "tray": {
+    "show-passive-item": true,
+    "spacing": 10
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "rewrite": {
+      "^$": "Kawaiii~ ʕ·ᴥ·ʔ",
+      "(.*)Mozilla Firefox": "Mozilla Firefox",
+      "nvim(.*)": "Coding on ",
+    },
+    "separate-outputs": true,
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": []
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "disable-scroll": false,
+    "active-only": false
+  },
+
+  "memory": {
+    "format": "  {percentage}%"
+  },
+
+  "clock": {
+    //"format": " {:L%a %d %b %H:%M}"
+    "format": " {:%H:%M %a %d %b}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-icons": {
+      "headphone": " ",
+      "default": [
+        "",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "kitty --title wiremix -e wiremix --tab output"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 5
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}% (Charging)",
+    "format-plugged": "󰂃 {capacity}% (Plugged)",
+    "format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"],
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "shutdown -h now",
+    "format": " ⏻ "
+  },
+
+}
