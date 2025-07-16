@@ -8,6 +8,8 @@
 
   "modules-left": [
     "custom/fuzzel",
+    "bluetooth",
+    "network",
     "tray",
     "hyprland/window"
   ],
@@ -81,6 +83,26 @@
   "clock": {
     //"format": " {:L%a %d %b %H:%M}"
     "format": " {:%H:%M %a %d %b}"
+  },
+  
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    "tooltip-format": "{device_address}",
+    "on-click": "kitty --title bluetoothctl -e bluetoothctl",
+    "interval": 30
+  },
+
+  "network": {
+    "interface": "wlp0s20f3",
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "  {ipaddr}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{ifname}: IP {ipaddr}\n⬆ {bandwidthUpOctets} ⬇ {bandwidthDownOctets}",
+    "interval": 30,
+    "on-click": "kitty --title nmtui -e nmtui"
   },
 
   "pulseaudio": {

@@ -59,6 +59,8 @@
 }
 
 /* 右侧系统模块 */
+#bluetooth,  /* 新增 */
+#network,    /* 新增 */
 #cpu,
 #memory,
 #pulseaudio,
@@ -74,6 +76,14 @@
 }
 
 /* 模块特定颜色 */
+#bluetooth {  /* 新增 */
+  color: #8a7fff; /* 蓝紫色 */
+}
+
+#network {    /* 新增 */
+  color: #7bc1ff; /* 紫调蓝 */
+}
+
 #pulseaudio {
   color: #8a7fff; /* 蓝紫色 */
 }
@@ -107,6 +117,15 @@
 #custom-power {
   color: #ff8cb4; /* 粉紫色 */
   margin-right: 8px;
+}
+
+/* 状态指示器 */
+#network.disconnected {  /* 新增 */
+  color: #ff8cb4; /* 断开连接时使用粉紫色 */
+}
+
+#bluetooth.disabled {   /* 新增 */
+  color: #b0a0c0; /* 禁用时使用灰紫色 */
 }
 
 /* 托盘样式 */
