@@ -1,0 +1,19 @@
+/* dark menu */
+menu {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 6px 0;
+}
+
+menuitem {
+  padding: 6px 24px;
+}
+
+menuitem:hover {
+  background-color: #3a3a3a;
+}
+
+menuitem:disabled {
+  color: #777777;
+}

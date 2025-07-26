@@ -1,0 +1,159 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 30,
+  "spacing": 5,
+  "exclusive": true,
+  "fixed-center": true,
+
+  "modules-left": [
+    "custom/fuzzel",
+    "bluetooth",
+    "network",
+    "tray",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "cpu",
+    "hyprland/workspaces",
+    "memory"
+  ],
+  "modules-right": [
+    "custom/cava",
+    "clock",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+
+  "custom/fuzzel": {
+    "format": "󰣇",
+    "on-click": "fuzzel"
+  },
+
+  "tray": {
+    "show-passive-item": true,
+    "spacing": 10,
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "rewrite": {
+      "^$": "Kawaiii~ ʕ·ᴥ·ʔ",
+      "(.*)Zen Browser": "Zen Browser",
+      "(.*)Mozilla Firefox": "Mozilla Firefox",
+      "nvim(.*)": "Coding on ",
+    },
+    "separate-outputs": true,
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": []
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "disable-scroll": false,
+    "active-only": false
+  },
+
+  "memory": {
+    "format": "  {percentage}%"
+  },
+
+  "clock": {
+    //"format": " {:L%a %d %b %H:%M}"
+    "format": " {:%H:%M %a %d %b}"
+  },
+  
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+    "tooltip-format": "{device_address}",
+    "on-click": "kitty --title bluetoothctl -e bluetoothctl",
+    "interval": 30
+  },
+
+  "network": {
+    "interface": "wlp0s20f3",
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "  {ipaddr}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{ifname}: IP {ipaddr}\n⬆ {bandwidthUpOctets} ⬇ {bandwidthDownOctets}",
+    "interval": 30,
+    "on-click": "kitty --title nmtui -e nmtui"
+  },
+
+  "custom/cava": {
+    "format": "{icon}{text}",
+    "format-icons": {
+        "Paused": " ",
+        "Stopped": " "
+    },
+    "escape": true,
+    "tooltip": true,
+    // use the script, you need to install 'jq' to parsed json.
+    "exec": "~/.config/waybar/scripts/caway.sh -b 15 -f 30",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "max-length": 35
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
+    "format-icons": {
+      "headphone": " ",
+      "default": [
+        "",
+        " ",
+        " "
+      ]
+    },
+    "on-click": "kitty --title wiremix -e wiremix --tab output"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 5
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}% (Charging)",
+    "format-plugged": "󰂃 {capacity}% (Plugged)",
+    "format-icons": ["󰁺", "󰁼", "󰁿", "󰂀", "󰁹"],
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "shutdown -h now",
+    "format": " ⏻ "
+  },
+
+}
