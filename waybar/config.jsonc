@@ -42,7 +42,7 @@
       "^$": "Kawaiii~ ʕ·ᴥ·ʔ",
       "(.*)Zen Browser": "Zen Browser",
       "(.*)Mozilla Firefox": "Mozilla Firefox",
-      "nvim(.*)": "Coding on ",
+      "(.*)nvim(.*)": "Coding on ",
     },
     "separate-outputs": true,
   },
