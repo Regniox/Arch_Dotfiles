@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.lang.clangd",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.ui.dashboard-nvim"
   ],
   "install_version": 8,
